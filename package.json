@@ -1,0 +1,29 @@
+{
+  "name": "jest-esm-dynamic-import-error",
+  "version": "0.0.0",
+  "description": "Repo for replicating dynamic import errors related to Jest's native ESM support",
+  "main": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx --node-arg=--experimental-modules --node-arg=--experimental-vm-modules jest",
+    "test:debug": "npx --node-arg=--experimental-modules --node-arg=--experimental-vm-modules --node-arg=--inspect jest --watch",
+    "test:clearcache": "jest --clear-cache",
+    "test:error": "npm run test:clearcache && npm test && npm test"
+  },
+  "keywords": [
+    "jest",
+    "javascript",
+    "errors"
+  ],
+  "author": "Brian David <beejunk@gmail.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "eslint": "^6.8.0",
+    "jest": "^25.5.3",
+    "jest-environment-jsdom-sixteen": "^1.0.3"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-jsdom-sixteen"
+  }
+}
